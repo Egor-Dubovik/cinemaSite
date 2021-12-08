@@ -1,31 +1,33 @@
-function openNavMenu(nav, active) {
-	nav.classList.add(active);
-	console.log('ee')
+function openMenu(elem, active) {
+	elem.classList.add(active);
+
 }
 
-function closeNavMenu(nav, active) {
-	nav.classList.remove(active);
+function closeMenu(elem, active) {
+	elem.classList.remove(active);
 }
 
+// console.log(document)
 
 
-
-const slideMenu = (setting) => {
-	const { openBtn, menu, classActiveMenu, closeTrigger } = setting;
+const slideMenu = ({ openBtn, menu, classActiveMenu, closeTrigger }) => {
 	const burgerBtn = document.querySelector(openBtn);
-	const navigation = document.querySelector(menu);
+	const navigationMenu = document.querySelector(menu);
 	const navigationClose = document.querySelectorAll(closeTrigger);
 
-	burgerBtn.addEventListener('click', () => {
-		openNavMenu(navigation, classActiveMenu);
-	});
-
+	burgerBtn.addEventListener('click', openMenu.bind(this, navigationMenu, classActiveMenu));
+	// console.log(navigationClose)
 	navigationClose.forEach(item => {
 		item.addEventListener('click', () => {
-			closeNavMenu(navigation, classActiveMenu);
+			closeMenu(navigationMenu, classActiveMenu);
 		})
 	})
-	console.log(classActiveMenu);
+
+	document.addEventListener('mousedown', (e) => {
+		if (!e.target.closest('.navigation')) {
+			closeMenu(navigationMenu, classActiveMenu);
+		}
+	})
 }
 
 
