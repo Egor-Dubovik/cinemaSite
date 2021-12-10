@@ -1,5 +1,6 @@
 import slideMenu from "./menu.js";
 import renderVideos from "./renderVideos.js";
+import menuLinks from './menuLink.js';
 
 slideMenu({
 	openBtn: '.header__burger-btn',
@@ -9,4 +10,5 @@ slideMenu({
 });
 
 renderVideos();
+menuLinks();
 
