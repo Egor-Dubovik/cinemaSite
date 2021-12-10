@@ -7,10 +7,8 @@ import {
 import randerCards from './randerCards.js';
 
 const title = document.querySelector('.other-films__title');
-const filmWeek = document.querySelector('.film-week')
+const filmWeek = document.querySelector('.film-week');
 const getNav = document.querySelectorAll('.get-nav');
-
-console.log(getNav)
 
 const menuLinks = () => {
 
@@ -28,20 +26,19 @@ const menuLinks = () => {
 						.then(data => randerCards(data.results));
 				} else if (target.classList.contains('get-nav__link_popular-movies')) {
 					getPopular('movie')
-						.then(data => randerCards(data.results));
+						.then(data => randerCards(data.results, 'movie'));
 				} else if (target.classList.contains('get-nav__link_popular-tv')) {
 					getPopular('tv')
-						.then(data => randerCards(data.results));
+						.then(data => randerCards(data.results, 'tv'));
 				} else if (target.classList.contains('get-nav__link_top-movies')) {
 					getTop('movie')
-						.then(data => randerCards(data.results));
+						.then(data => randerCards(data.results, 'movie'));
 				} else if (target.classList.contains('get-nav__link_top-tv')) {
 					getTop('tv')
-						.then(data => randerCards(data.results));
+						.then(data => randerCards(data.results, 'tv'));
 				}
 
 			}
-			console.log(event.target);
 		})
 	})
 
