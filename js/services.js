@@ -17,7 +17,7 @@ const getDate = url => {
 }
 
 
-export const getTriends = (type = 'all', period = "day", page = 2) => {
+export const getTriends = (type = 'all', period = "day", page = 1) => {
 	const url = `${BASE_URL}trending/${type}/${period}?api_key=${API_KEY}&${LANGUAGE}&page=${page}`;
 	return getDate(url);
 }
