@@ -17,7 +17,7 @@ const randerCards = (data, type) => {
 
 		const link = document.createElement('a');
 		if (key) link.href = `https://youtu.be/${key}`;
-		link.className = 'other-films__link';
+		link.className = 'other-films__link tube';
 		if (item.vote_average) link.dataset.rating = item.vote_average;
 
 
