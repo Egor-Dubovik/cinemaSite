@@ -8,9 +8,9 @@
 	<title>Global cinema - онлайн-кинотеатр</title>
 
 	<link rel="icon" href="img/favicon.ico">
+
 	<link rel="stylesheet" href="style/style.css">
-	<link rel="stylesheet" href="js/videotube/videotube.min.css">
-	<script src="./js/videotube/videotube.min.js"></script>
+
 	<script src="./js/script.js" type="module"></script>
 
 </head>
@@ -23,7 +23,12 @@
 			</p>
 
 			<form class="header__search-form" action="#">
-				<input class="header__search-input" type="search" name="search" required="" placeholder="Поиск">
+				<button type="submit" class="header__search-btn"></button>
+				<input class="header__search-input" type="search" name="search" autofocus autocomplete="off"
+					placeholder="Поиск">
+				<button class="header__search-erase erase">
+					<div class="erase__content"></div>
+				</button>
 			</form>
 
 			<button class="header__burger-btn" aria-label="открыть меню">

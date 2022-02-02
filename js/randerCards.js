@@ -4,9 +4,9 @@ const listCards = document.querySelector('.other-films__list');
 
 const randerCards = (data, type) => {
 	listCards.textContent = '';
-
+	console.log(data)
 	Promise.all(data.map(async (item) => {
-		console.warn(item)
+		// console.warn(item)
 		const mediaType = item.media_type ? item.media_type : type;
 
 		const video = await getVideo(item.id, mediaType);
@@ -17,7 +17,7 @@ const randerCards = (data, type) => {
 
 		const link = document.createElement('a');
 		if (key) link.href = `https://youtu.be/${key}`;
-		link.className = 'other-films__link tube';
+		link.className = 'other-films__link';
 		if (item.vote_average) link.dataset.rating = item.vote_average;
 
 
@@ -31,12 +31,37 @@ const randerCards = (data, type) => {
 				`${item.poster_path}`;
 		}
 
+
+		const cardInfo = document.createElement('div');
+		cardInfo.className = 'other-films__card-info';
+
+		const title = item.title ? item.title : ' ';
+		const cardTitle = document.createElement('h3');
+		cardTitle.className = 'other-films__card-title';
+		cardTitle.textContent = `${title}`
+
+		const cardOverview = document.createElement('span');
+		cardOverview.className = 'other-films__card-overview';
+		cardOverview.textContent = `${item.overview}`
+
+		cardInfo.append(cardTitle);
+		cardInfo.append(cardOverview);
+
+		if (key) {
+			const cardBtn = document.createElement('a');
+			cardBtn.className = 'other-films__card-btn';
+			cardBtn.href = `https://youtu.be/${key}`;
+			cardInfo.append(cardBtn);
+		}
+
+		card.append(cardInfo);
 		card.append(link);
 		link.append(img);
 
 		return card;
 	})).then(cards => listCards.append(...cards))
-
 }
+
+
 
 export default randerCards;
