@@ -32,8 +32,9 @@ const randerCards = (data, type) => {
 		}
 
 
-		const cardInfo = document.createElement('div');
+		const cardInfo = document.createElement('a');
 		cardInfo.className = 'other-films__card-info';
+
 
 		const title = item.title ? item.title : ' ';
 		const cardTitle = document.createElement('h3');
@@ -51,6 +52,7 @@ const randerCards = (data, type) => {
 			const cardBtn = document.createElement('a');
 			cardBtn.className = 'other-films__card-btn';
 			cardBtn.href = `https://youtu.be/${key}`;
+			cardInfo.href = `https://youtu.be/${key}`;
 			cardInfo.append(cardBtn);
 		}
 

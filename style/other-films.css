@@ -31,7 +31,6 @@
 .other-films__item {
 	position: relative;
 	box-shadow: 0px 0px 10px var(--color-primary);
-	transition: box-shadow 0.2s;
 	border-radius: 10px;
 	transition: 0.5s ease;
 }
@@ -79,10 +78,13 @@
 	border-radius: 10px;
 	z-index: 2;
 	opacity: 0;
+	visibility: hidden;
 }
 
 .other-films__item:hover .other-films__card-info {
+	color: #fff;
 	opacity: 1;
+	visibility: visible;
 }
 
 .other-films__card-btn {
@@ -108,12 +110,12 @@
 	opacity: 1;
 }
 
-.other-films__link:hover .other-films__img {
+.other-films__card-info[href]:hover {
 	box-shadow: 0px 0px 3px 5px var(--color-primary);
 }
 
-.other-films__link[href]:hover .other-films__img {
-	box-shadow: 0px 0px 7px 10px #ff0335;
+.other-films__card-info:hover {
+	box-shadow: 0px 0px 3px 5px #ff0335;
 }
 
 .other-films__link:focus .other-films__img,
