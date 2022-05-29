@@ -11,7 +11,6 @@ const search = () => {
 		event.preventDefault();
 
 		if (!searchInput.value) return;
-		console.log(searchInput);
 
 		getSearch(searchInput.value)
 			.then(data => {
