@@ -31,7 +31,7 @@ const randerCards = (data, type) => {
 
 
     const cardInfo = document.createElement('a');
-    cardInfo.className = 'other-films__card-info';
+    cardInfo.className = 'other-films__card-info tube';
 
 
     const title = item.title ? item.title : ' ';
